@@ -24,6 +24,12 @@ sudo apt-get install libatlas-base-dev gfortran
 
 sudo apt-get install ffmpeg
 
+sudo pip install Pillow
+sudo pip install requests
+sudo apt-get install libboost-all-dev
+sudo apt-get install python-tk
+sudo apt-get install python3-tk 
+
 
 #Download opencv source
 #https://opencv.org/releases.html
