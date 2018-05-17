@@ -1,13 +1,18 @@
 #!/bin/bash
 
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock
+
+sudo apt-get install git
+sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
 sudo apt-get install python-pip
 sudo pip install boto3
+sudo apt-get install -f
 sudo pip install numpy
-sudo apt-get install ffmpeg
 sudo pip install opencv-python
-sudo apt-get install cmake
 sudo apt-get install build-essential
-sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+
 
 sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
 
@@ -17,11 +22,13 @@ sudo apt-get install libxvidcore-dev libx264-dev
 
 sudo apt-get install libatlas-base-dev gfortran
 
+sudo apt-get install ffmpeg
+
 
 #Download opencv source
 #https://opencv.org/releases.html
 
-unzip opencv-3.4.1.zip
+unzip opencv-3.4.0.zip
 cd ~/opencv-3.4.0
 mkdir build
 cd build
