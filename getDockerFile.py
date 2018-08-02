@@ -23,10 +23,12 @@ def Folder_Create():
 def run():
     global PNG_NUMBER
     global KEEP_COUNT
+    print(CONTAINER_NAME)
+    print('docker cp ' + CONTAINER_NAME + ':/app/pic/' + str(PNG_NUMBER) + '.png ./picture')
     while True:
         file_path = './picture/' + str(PNG_NUMBER) + '.png'
+        subprocess.call('docker cp ' + CONTAINER_NAME + ':/app/pic/' + str(PNG_NUMBER) + '.png ./picture' , shell = True)
         if os.path.isfile(file_path) == True:
-            subprocess.call('docker cp ' + CONTAINER_NAME + ':/app/pic/' + str(PNG_NUMBER) + '.png ./picture/' , shell = True)
             #print(file_path + ' esists!!!!')
             PNG_NUMBER += 1
             time.sleep(WAIT_TIME)
