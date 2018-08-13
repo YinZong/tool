@@ -28,9 +28,12 @@ def run():
     while True:
         file_path = './picture/' + str(PNG_NUMBER) + '.png'
         subprocess.call('docker cp ' + CONTAINER_NAME + ':/app/pic/' + str(PNG_NUMBER) + '.png ./picture' , shell = True)
+
+        #Determine if the file exists
         if os.path.isfile(file_path) == True:
             #print(file_path + ' esists!!!!')
-            PNG_NUMBER += 1
+            subprocess.call('docker exec -it ' + CONTAINER_NAME + ' rm /app/pic/' + str(PNG_NUMBER) + '.png')
+            PNG_NUMBER += 1           
             time.sleep(WAIT_TIME)
             KEEP_COUNT = 5
 
