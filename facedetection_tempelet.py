@@ -2,9 +2,9 @@
 # -*- coding:utf-8 -*-
 import numpy as np
 import cv2
-face_cascade = cv2.CascadeClassifier('/home/nvidia/Desktop/haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier('/home/kevin/tool/haarcascade_frontalface_default.xml')
 
-image = cv2.imread('/home/nvidia/Desktop/456.jpeg')
+image = cv2.imread('/home/kevin/桌面/123.jpg')
 grayImage = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
  
 faces = face_cascade.detectMultiScale(grayImage)
